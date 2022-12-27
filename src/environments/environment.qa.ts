@@ -2,8 +2,7 @@ const notesUrl = "http://localhost:8080/api/notes";
 
 export const environment = {
 
-  qa: false,
+  qa: true,
   production: false,
-  notesUrl: "http://localhost:8080/api/notes"
 
 };

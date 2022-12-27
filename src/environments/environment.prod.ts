@@ -1,3 +1,8 @@
+const notesUrl = "http://localhost:8080/api/notes";
+
 export const environment = {
-  production: true
+
+  qa: false,
+  production: true,
+
 };
