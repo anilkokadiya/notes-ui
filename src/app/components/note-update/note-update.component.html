@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="h3 text-center">Update Note</div>
+<div class="container shadow-lg p-3 mb-5 bg-white rounded" *ngIf="isNoteLoaded">
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="note.title" id="title" name="title" placeholder="Please Enter Title"/>
+    </div>
+    <div class="form-group">
+      <label for="note">Note</label>
+      <input type="text" class="form-control" [(ngModel)]="note.note" id="note" name="note" placeholder="Please Enter Note"/>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary mx-1 mt-3 customBtnPrimary" (click)="noteUpdate()">
+        Update
+      </button>
+      <button type="button" routerLink="/notes" class="btn btn-danger mx-1 mt-3 customBtnDanger">
+        Back
+      </button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

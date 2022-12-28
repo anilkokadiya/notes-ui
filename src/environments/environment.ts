@@ -1,9 +1,11 @@
-const notesUrl = "http://localhost:8080/api/notes";
+const notesGeneralUrl = "http://localhost:8080/api/notes";
 
 export const environment = {
 
   qa: false,
   production: false,
-  notesUrl: "http://localhost:8080/api/notes"
-
+  notesUrl: notesGeneralUrl,
+  addNoteUrl: notesGeneralUrl+'/add',
+  updateNoteUrl: notesGeneralUrl+'/update',
+  deleteNoteUrl: notesGeneralUrl+'/delete'
 };

@@ -1,1 +1,49 @@
-<p>notes-add works!</p>
+<div class="text-center mb-3">
+  <button type="button" class="btn btn-primary customBtn" (click)="showNotesForm()">Add New Note</button>
+</div>
+
+<div
+  class="container shadow-lg p-3 mb-5 bg-white rounded"
+  *ngIf="isShowNotesForm"
+>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="note.title"
+        id="title"
+        name="title"
+        placeholder="Please Enter Title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="note">Note</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="note.note"
+        id="note"
+        name="note"
+        placeholder="Please Enter Note"
+      />
+    </div>
+    <div>
+      <button
+        type="button"
+        class="btn btn-primary mt-3 customBtn"
+        (click)="addNewNote()"
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger mt-3 ml-3 customBtnDanger"
+        (click)="hideNoteForm()"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

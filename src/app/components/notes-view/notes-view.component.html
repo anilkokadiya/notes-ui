@@ -1,62 +1,47 @@
 <div class="container">
-  <!-- <div *ngIf="todos.length === 0; else showTodo">
-    <div class="h3 text-center">No To-Do Found</div>
+  <div *ngIf="notes.length === 0; else showNotes">
+    <div class="h3 text-center">No Notes Found</div>
   </div>
-  <ng-template #showTodo>
+  <ng-template #showNotes>
     <table class="table table-striped">
       <thead class="table-dark">
         <tr>
-          <th class="col-md-3">Status</th>
-          <th class="col-md-3">Task Name</th>
-          <th class="col-md-3">Due</th>
-          <th>View</th>
+          <th class="col-md-3">Title</th>
+          <th class="col-md-3">Note</th>
+          <th>Created Date</th>
+          <th>Updated Date</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let e of todos">
+        <tr *ngFor="let e of notes">
           <td>
             <div class="form-check">
-              <input
-                mdbCheckbox
-                class="form-check-input"
-                type="checkbox"
-                value="e.IS_CHECKED"
-                id="flexCheckDefault"
-                [checked]="e.IS_CHECKED"
-                (change)="taskStatusChange(e.TASK_ID)"
-              />
               <label class="form-check-label" for="flexCheckDefault">
-                {{ e.TASK_STATUS }}
+                {{ e.title }}
               </label>
             </div>
           </td>
-          <td>{{ e.TASK_NAME }}</td>
-          <td>{{ e.TASK_DUE }}</td>
+          <td>{{ e.note }}</td>
+          <td>{{ e.created_time }}</td>
+          <td>{{ e.last_updated_time }}</td>
           <td>
-            <i-bs
-              name="eye-fill"
-              class="cursor-pointer"
-              (click)="viewTodo(e.TASK_ID)"
-            ></i-bs>
+            <div class="cursor-pointer" (click)="editNote(e.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+              </svg>
+            </div>
           </td>
           <td>
-            <i-bs
-              name="pen-fill"
-              class="cursor-pointer"
-              (click)="updateTodo(e.TASK_ID)"
-            ></i-bs>
-          </td>
-          <td>
-            <i-bs
-              name="trash-fill"
-              class="cursor-pointer"
-              (click)="deleteTodo(e.TASK_ID)"
-            ></i-bs>
+            <div class="cursor-pointer" (click)="deleteNote(e.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+              </svg>
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
-  </ng-template> -->
+  </ng-template>
 </div>
